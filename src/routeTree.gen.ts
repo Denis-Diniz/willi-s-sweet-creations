@@ -10,33 +10,77 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CardapioTematicosEPersonalizadosRouteImport } from './routes/cardapio.tematicos-e-personalizados'
+import { Route as CardapioGourmetRouteImport } from './routes/cardapio.gourmet'
+import { Route as CardapioArtesanaisRouteImport } from './routes/cardapio.artesanais'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CardapioTematicosEPersonalizadosRoute =
+  CardapioTematicosEPersonalizadosRouteImport.update({
+    id: '/cardapio/tematicos-e-personalizados',
+    path: '/cardapio/tematicos-e-personalizados',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CardapioGourmetRoute = CardapioGourmetRouteImport.update({
+  id: '/cardapio/gourmet',
+  path: '/cardapio/gourmet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CardapioArtesanaisRoute = CardapioArtesanaisRouteImport.update({
+  id: '/cardapio/artesanais',
+  path: '/cardapio/artesanais',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cardapio/artesanais': typeof CardapioArtesanaisRoute
+  '/cardapio/gourmet': typeof CardapioGourmetRoute
+  '/cardapio/tematicos-e-personalizados': typeof CardapioTematicosEPersonalizadosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cardapio/artesanais': typeof CardapioArtesanaisRoute
+  '/cardapio/gourmet': typeof CardapioGourmetRoute
+  '/cardapio/tematicos-e-personalizados': typeof CardapioTematicosEPersonalizadosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cardapio/artesanais': typeof CardapioArtesanaisRoute
+  '/cardapio/gourmet': typeof CardapioGourmetRoute
+  '/cardapio/tematicos-e-personalizados': typeof CardapioTematicosEPersonalizadosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/cardapio/artesanais'
+    | '/cardapio/gourmet'
+    | '/cardapio/tematicos-e-personalizados'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/cardapio/artesanais'
+    | '/cardapio/gourmet'
+    | '/cardapio/tematicos-e-personalizados'
+  id:
+    | '__root__'
+    | '/'
+    | '/cardapio/artesanais'
+    | '/cardapio/gourmet'
+    | '/cardapio/tematicos-e-personalizados'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CardapioArtesanaisRoute: typeof CardapioArtesanaisRoute
+  CardapioGourmetRoute: typeof CardapioGourmetRoute
+  CardapioTematicosEPersonalizadosRoute: typeof CardapioTematicosEPersonalizadosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +92,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cardapio/tematicos-e-personalizados': {
+      id: '/cardapio/tematicos-e-personalizados'
+      path: '/cardapio/tematicos-e-personalizados'
+      fullPath: '/cardapio/tematicos-e-personalizados'
+      preLoaderRoute: typeof CardapioTematicosEPersonalizadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cardapio/gourmet': {
+      id: '/cardapio/gourmet'
+      path: '/cardapio/gourmet'
+      fullPath: '/cardapio/gourmet'
+      preLoaderRoute: typeof CardapioGourmetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cardapio/artesanais': {
+      id: '/cardapio/artesanais'
+      path: '/cardapio/artesanais'
+      fullPath: '/cardapio/artesanais'
+      preLoaderRoute: typeof CardapioArtesanaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CardapioArtesanaisRoute: CardapioArtesanaisRoute,
+  CardapioGourmetRoute: CardapioGourmetRoute,
+  CardapioTematicosEPersonalizadosRoute: CardapioTematicosEPersonalizadosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
