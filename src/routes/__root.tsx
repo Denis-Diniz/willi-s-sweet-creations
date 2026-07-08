@@ -77,21 +77,32 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Willi Doces Para Festas | Doces Gourmet Artesanais" },
+      {
+        name: "description",
+        content:
+          "Doces gourmet artesanais feitos à mão por Williane Diniz. Brigadeiros, doces temáticos e personalizados para sua festa.",
+      },
+      { name: "author", content: "Williane Diniz" },
+      { property: "og:title", content: "Willi Doces Para Festas | Doces Gourmet Artesanais" },
+      {
+        property: "og:description",
+        content:
+          "Doces gourmet artesanais feitos à mão. Brigadeiros, doces temáticos e personalizados para celebrações inesquecíveis.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Willi Doces Para Festas" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Jost:wght@300;400;500&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
