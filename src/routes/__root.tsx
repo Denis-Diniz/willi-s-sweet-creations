@@ -88,15 +88,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Doces gourmet artesanais feitos à mão. Brigadeiros, doces temáticos e personalizados para celebrações inesquecíveis.",
+          "Doces gourmet artesanais feitos à mão por Williane Diniz. Brigadeiros, doces temáticos e personalizados para sua festa.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Willi Doces Para Festas" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Willi — Doces Para Festas" },
+      { name: "twitter:description", content: "Doces gourmet artesanais feitos à mão por Williane Diniz. Brigadeiros, doces temáticos e personalizados para sua festa." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/OlMKHiu38FcTpFqg0POyPndXkSW2/social-images/social-1783631291944-Logo_favicon.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/OlMKHiu38FcTpFqg0POyPndXkSW2/social-images/social-1783631291944-Logo_favicon.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/jpeg", href: "/Logo_favicon.jpeg" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
