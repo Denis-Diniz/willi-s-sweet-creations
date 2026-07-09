@@ -50,7 +50,11 @@ function Page() {
         },
       ]}
     >
-      <div className="mt-16 bg-[color:var(--blush)] rounded-2xl p-8 sm:p-12">
+      <p className="mt-10 p-5 rounded-lg bg-[color:var(--blush)] text-[color:var(--cacau)] italic text-[0.95rem] leading-relaxed border-l-[3px] border-[color:var(--rosegold)]">
+        Os docinhos temáticos são produzidos de acordo com o tema de preferência do cliente.
+      </p>
+
+      <div className="mt-12 bg-[color:var(--blush)] rounded-2xl p-8 sm:p-12">
         <span className="eyebrow block mb-3">Conte sua ideia</span>
         <span className="divider-gold mb-5" />
         <h3 className="font-display font-bold text-[clamp(1.5rem,3vw,2rem)] text-gradient-gold">
