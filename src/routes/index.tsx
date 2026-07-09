@@ -3,8 +3,8 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 
-import heroImg from "@/assets/hero-willi.jpg";
-import sobreImg from "@/assets/sobre-willi.jpg";
+import heroAsset from "@/assets/williane-hero.jpg.asset.json";
+import sobreAsset from "@/assets/williane-sobre.jpg.asset.json";
 import artesanaisImg from "@/assets/doces-artesanais.jpg";
 import gourmetImg from "@/assets/doces-gourmet.jpg";
 import tematicosImg from "@/assets/doces-tematicos.jpg";
@@ -21,13 +21,13 @@ export const Route = createFileRoute("/")({
 
 const categorias = [
   {
-    id: "artesanais",
-    name: "Doces Artesanais",
+    id: "tradicionais",
+    name: "Doces Tradicionais",
     description:
       "Os clássicos que nunca saem de moda. Brigadeiros tradicionais e variações artesanais, feitos com ingredientes de qualidade e acabamento impecável.",
     img: artesanaisImg,
     to: "/cardapio/artesanais",
-    alt: "Brigadeiros artesanais de chocolate com granulado em caixa kraft",
+    alt: "Brigadeiros tradicionais de chocolate com granulado em caixa kraft",
   },
   {
     id: "gourmet",
@@ -76,7 +76,6 @@ function Home() {
       <SiteNav />
       <main>
         <Hero />
-        <SocialProof />
         <Sobre />
         <TiposDeDoces />
         <Portfolio />
@@ -125,37 +124,12 @@ function Hero() {
         <div className="relative">
           <div className="absolute -inset-6 rounded-[24px] bg-white/40 blur-2xl" aria-hidden />
           <img
-            src={heroImg}
-            alt="Williane Diniz oferecendo bandeja de doces florais coloridos"
-            width={1024}
-            height={1280}
+            src={heroAsset.url}
+            alt="Williane Diniz oferecendo bandeja de doces coloridos"
             className="relative w-full h-auto rounded-2xl object-cover shadow-[var(--shadow-photo)]"
             fetchPriority="high"
           />
         </div>
-      </div>
-    </section>
-  );
-}
-
-function SocialProof() {
-  const items = [
-    { number: "500+", label: "festas realizadas" },
-    { number: "5 anos", label: "de experiência" },
-    { number: "100%", label: "feito à mão" },
-    { number: "Sob encomenda", label: "atendimento personalizado" },
-  ];
-  return (
-    <section className="bg-[color:var(--cacau)]">
-      <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12 py-10 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-        {items.map((i) => (
-          <div key={i.label}>
-            <div className="font-display font-bold text-3xl md:text-4xl text-white">{i.number}</div>
-            <div className="mt-2 text-[11px] tracking-[0.3em] uppercase font-light text-[color:var(--velvet)]">
-              {i.label}
-            </div>
-          </div>
-        ))}
       </div>
     </section>
   );
@@ -167,10 +141,8 @@ function Sobre() {
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
           <img
-            src={sobreImg}
+            src={sobreAsset.url}
             alt="Williane Diniz, confeiteira e fundadora da Willi Doces, segurando uma bandeja de doces coloridos"
-            width={900}
-            height={1200}
             loading="lazy"
             className="w-full max-w-md mx-auto lg:mx-0 aspect-[3/4] object-cover rounded-2xl shadow-[var(--shadow-photo)]"
           />
