@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Willi Doces Para Festas | Doces Gourmet Artesanais" },
+      { title: "Willi — Doces Para Festas" },
       {
         name: "description",
         content:
           "Doces gourmet artesanais feitos à mão por Williane Diniz. Brigadeiros, doces temáticos e personalizados para sua festa.",
       },
       { name: "author", content: "Williane Diniz" },
-      { property: "og:title", content: "Willi Doces Para Festas | Doces Gourmet Artesanais" },
+      { property: "og:title", content: "Willi — Doces Para Festas" },
       {
         property: "og:description",
         content:
@@ -96,7 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
