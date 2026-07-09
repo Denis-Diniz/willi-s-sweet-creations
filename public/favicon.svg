@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="rosegold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C87941"/>
+      <stop offset="100%" stop-color="#B5635A"/>
+    </linearGradient>
+  </defs>
+  <text
+    x="50%"
+    y="55%"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    font-family="Fraunces, Georgia, 'Times New Roman', serif"
+    font-size="42"
+    font-weight="700"
+    fill="url(#rosegold)"
+  >W</text>
+</svg>
