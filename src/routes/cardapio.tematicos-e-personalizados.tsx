@@ -28,44 +28,33 @@ export const Route = createFileRoute("/cardapio/tematicos-e-personalizados")({
 function Page() {
   return (
     <CardapioPage
-      title="Doces Temáticos e Personalizados"
-      intro="Cada festa tem sua história. Desenhamos junto com você — do tema à paleta — para criar peças únicas que combinam com o momento."
+      title="Doces Temáticos"
+      intro="Cada festa tem sua história. Desenhamos junto com você — do tema à paleta — para criar peças únicas. Preços para caixas de 50 unidades e 100 unidades."
       heroImg={img}
-      heroAlt="Doces temáticos personalizados de chá de bebê em tons bege e dourado"
+      heroAlt="Doces temáticos personalizados em tons coloridos"
       items={[
         {
-          name: "Kit Chá de Bebê",
-          description: "Doces moldados com tema do bebê, cores e personagens personalizados.",
-          price: "Sob consulta",
+          name: "Coloridos",
+          description: "Paleta de cores escolhida pelo cliente, acabamento delicado.",
+          price: "R$ 90 / R$ 180",
         },
         {
-          name: "Kit Aniversário Temático",
-          description: "Criação exclusiva para o tema escolhido, com acabamento dourado ou colorido.",
-          price: "Sob consulta",
+          name: "Carimbados",
+          description: "Doces com carimbos personalizados — nomes, logos, símbolos do tema.",
+          price: "R$ 90 / R$ 180",
         },
         {
-          name: "Doces para Mesa de Festa",
-          description: "Mix personalizado para mesa de doces, apresentação premium.",
-          price: "Sob consulta",
-        },
-        {
-          name: "Casamento & Noivado",
-          description: "Bem-casados, bombons finos e peças autorais com sua identidade.",
-          price: "Sob consulta",
-        },
-        {
-          name: "Corporativo & Presentes",
-          description: "Caixas personalizadas com logo, cartão e paleta da sua marca.",
-          price: "Sob consulta",
-        },
-        {
-          name: "Chá Revelação",
-          description: "Doces em tons rosa/azul com surpresa no recheio.",
-          price: "Sob consulta",
+          name: "Modelados",
+          description: "Peças modeladas à mão em formatos do tema escolhido.",
+          price: "R$ 90 / R$ 180",
         },
       ]}
     >
-      <div className="mt-16 bg-[color:var(--blush)] rounded-2xl p-8 sm:p-12">
+      <p className="mt-10 p-5 rounded-lg bg-[color:var(--blush)] text-[color:var(--cacau)] italic text-[0.95rem] leading-relaxed border-l-[3px] border-[color:var(--rosegold)]">
+        Os docinhos temáticos são produzidos de acordo com o tema de preferência do cliente.
+      </p>
+
+      <div className="mt-12 bg-[color:var(--blush)] rounded-2xl p-8 sm:p-12">
         <span className="eyebrow block mb-3">Conte sua ideia</span>
         <span className="divider-gold mb-5" />
         <h3 className="font-display font-bold text-[clamp(1.5rem,3vw,2rem)] text-gradient-gold">
