@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Doces gourmet artesanais feitos à mão por Williane Diniz. Brigadeiros, doces temáticos e personalizados para sua festa.",
       },
       { name: "author", content: "Williane Diniz" },
-      { property: "og:title", content: "Willi Doces Para Festas | Doces Gourmet Artesanais" },
+      { property: "og:title", content: "Willi — Doces Para Festas" },
       {
         property: "og:description",
         content:
