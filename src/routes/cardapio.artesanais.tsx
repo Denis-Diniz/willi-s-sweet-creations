@@ -30,7 +30,7 @@ const items = [
   { name: "Moranguinho", description: "Sabor delicado de morango com finalização caprichada." },
   { name: "Cajuzinho", description: "Amendoim moído com chocolate e castanha inteira no topo." },
   { name: "Casadinho", description: "Meio branco, meio brigadeiro — o par perfeito." },
-].map((it) => ({ ...it, price: "R$ 60 / R$ 120" }));
+].map((it) => ({ ...it, price50: "R$ 60,00", price100: "R$ 120,00" }));
 
 function Page() {
   return (

@@ -36,17 +36,20 @@ function Page() {
         {
           name: "Coloridos",
           description: "Paleta de cores escolhida pelo cliente, acabamento delicado.",
-          price: "R$ 90 / R$ 180",
+          price50: "R$ 90,00",
+          price100: "R$ 180,00",
         },
         {
           name: "Carimbados",
           description: "Doces com carimbos personalizados — nomes, logos, símbolos do tema.",
-          price: "R$ 90 / R$ 180",
+          price50: "R$ 90,00",
+          price100: "R$ 180,00",
         },
         {
           name: "Modelados",
           description: "Peças modeladas à mão em formatos do tema escolhido.",
-          price: "R$ 90 / R$ 180",
+          price50: "R$ 90,00",
+          price100: "R$ 180,00",
         },
       ]}
     >

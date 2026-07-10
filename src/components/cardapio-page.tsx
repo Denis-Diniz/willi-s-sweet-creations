@@ -9,7 +9,8 @@ const WHATSAPP_URL = "https://wa.me/message/KJXWWB2VCFYYF1";
 export interface CardapioItem {
   name: string;
   description: string;
-  price: string;
+  price50: string;
+  price100: string;
 }
 
 interface CardapioPageProps {
@@ -33,23 +34,23 @@ export function CardapioPage({ title, intro, heroImg, heroAlt, items, children }
   return (
     <div className="min-h-screen bg-[color:var(--cream)]">
       <SiteNav />
-      <main className="pb-24">
-        <section className="bg-[color:var(--blush)] pt-32 pb-14 lg:pt-40 lg:pb-20">
+      <main className="pb-32">
+        <section className="bg-[color:var(--blush)] pt-28 pb-12 sm:pt-32 sm:pb-14 lg:pt-40 lg:pb-20">
           <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
-            <nav className="text-xs font-light tracking-[0.15em] uppercase text-[color:var(--rosewood)] mb-6">
+            <nav className="text-[11px] sm:text-xs font-light tracking-[0.15em] uppercase text-[color:var(--rosewood)] mb-5 sm:mb-6 flex flex-wrap gap-x-2 gap-y-1">
               <Link to="/" className="hover:text-[color:var(--cacau)]">Início</Link>
-              <span className="mx-2 opacity-50">/</span>
+              <span className="opacity-50">/</span>
               <a href="/#tipos-de-doces" className="hover:text-[color:var(--cacau)]">Tipos de Doces</a>
-              <span className="mx-2 opacity-50">/</span>
+              <span className="opacity-50">/</span>
               <span className="text-[color:var(--cacau)]">{title}</span>
             </nav>
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
               <div>
                 <span className="eyebrow block mb-4">Cardápio</span>
-                <h1 className="font-display font-bold text-[clamp(2.5rem,5vw,4rem)] leading-tight text-gradient-gold">
+                <h1 className="font-display font-bold text-[clamp(2rem,5vw,4rem)] leading-tight text-gradient-gold">
                   {title}
                 </h1>
-                <p className="mt-6 text-lg text-[color:var(--rosewood)] leading-relaxed max-w-lg">
+                <p className="mt-5 sm:mt-6 text-base sm:text-lg text-[color:var(--rosewood)] leading-relaxed max-w-lg">
                   {intro}
                 </p>
               </div>
@@ -63,27 +64,56 @@ export function CardapioPage({ title, intro, heroImg, heroAlt, items, children }
           </div>
         </section>
 
-        <section className="py-16 lg:py-20">
-          <div className="mx-auto max-w-[1000px] px-5 sm:px-8">
-            <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
-              {items.map((it) => (
-                <article
-                  key={it.name}
-                  className="border-b border-[color:var(--border-subtle)] pb-6"
-                >
-                  <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="font-display font-medium text-[1.25rem] text-[color:var(--cacau)]">
-                      {it.name}
-                    </h3>
-                    <span className="font-display font-bold text-[color:var(--rosegold)] whitespace-nowrap">
-                      {it.price}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-[0.95rem] text-[color:var(--rosewood)] leading-relaxed">
-                    {it.description}
-                  </p>
-                </article>
-              ))}
+        <section className="py-14 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-[900px] px-4 sm:px-8">
+            <div className="overflow-hidden rounded-xl border border-[color:var(--border-subtle)] bg-white shadow-[var(--shadow-card)]">
+              <table className="w-full border-collapse text-left">
+                <thead>
+                  <tr className="bg-[color:var(--blush)]">
+                    <th
+                      scope="col"
+                      className="py-3 px-3 sm:py-4 sm:px-6 font-display font-semibold text-[color:var(--cacau)] text-sm sm:text-base"
+                    >
+                      {title}
+                    </th>
+                    <th
+                      scope="col"
+                      className="py-3 px-2 sm:py-4 sm:px-4 font-display font-semibold text-[color:var(--cacau)] text-xs sm:text-sm text-right whitespace-nowrap w-[22%] sm:w-[18%]"
+                    >
+                      50 un.
+                    </th>
+                    <th
+                      scope="col"
+                      className="py-3 px-3 sm:py-4 sm:px-6 font-display font-semibold text-[color:var(--cacau)] text-xs sm:text-sm text-right whitespace-nowrap w-[22%] sm:w-[18%]"
+                    >
+                      100 un.
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {items.map((it) => (
+                    <tr
+                      key={it.name}
+                      className="border-t border-[color:var(--border-subtle)] align-top"
+                    >
+                      <td className="py-4 px-3 sm:py-5 sm:px-6 min-w-0">
+                        <div className="font-display font-medium text-[color:var(--cacau)] text-[0.95rem] sm:text-[1.05rem]">
+                          {it.name}
+                        </div>
+                        <p className="mt-1 text-[0.8rem] sm:text-[0.9rem] text-[color:var(--rosewood)] leading-relaxed">
+                          {it.description}
+                        </p>
+                      </td>
+                      <td className="py-4 px-2 sm:py-5 sm:px-4 text-right whitespace-nowrap font-display font-semibold text-[color:var(--rosegold)] text-[0.85rem] sm:text-[0.95rem]">
+                        {it.price50}
+                      </td>
+                      <td className="py-4 px-3 sm:py-5 sm:px-6 text-right whitespace-nowrap font-display font-semibold text-[color:var(--rosegold)] text-[0.85rem] sm:text-[0.95rem]">
+                        {it.price100}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
 
             {children}

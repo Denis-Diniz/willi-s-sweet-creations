@@ -122,11 +122,11 @@ function Hero() {
           </div>
         </div>
         <div className="relative">
-          <div className="absolute -inset-6 rounded-[24px] bg-white/40 blur-2xl" aria-hidden />
+          <div className="absolute -inset-6 rounded-[24px] bg-gradient-to-br from-[color:var(--rosegold)]/25 via-white/30 to-[color:var(--velvet)]/40 blur-2xl animate-hero-glow" aria-hidden />
           <img
             src={heroAsset.url}
             alt="Williane Diniz oferecendo bandeja de doces coloridos"
-            className="relative w-full h-auto rounded-2xl object-cover shadow-[var(--shadow-photo)]"
+            className="relative w-full h-auto rounded-2xl object-cover shadow-[var(--shadow-photo)] animate-hero-float will-change-transform"
             fetchPriority="high"
           />
         </div>
