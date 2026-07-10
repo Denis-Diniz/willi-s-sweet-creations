@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 import heroAsset from "@/assets/williane-hero.jpg.asset.json";
-import sobreImg from "@/assets/Willi.JPG";
+import sobreAsset from "@/assets/williane-sobre-nova.jpg.asset.json";
 import artesanaisImg from "@/assets/doces-artesanais.jpg";
 import gourmetImg from "@/assets/doces-gourmet.jpg";
 import tematicosImg from "@/assets/doces-tematicos.jpg";
