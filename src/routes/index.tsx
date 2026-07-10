@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 import heroAsset from "@/assets/williane-hero.jpg.asset.json";
-import sobreImg from "@/assets/Willi.JPG";
+import sobreAsset from "@/assets/williane-sobre-nova.jpg.asset.json";
 import artesanaisImg from "@/assets/doces-artesanais.jpg";
 import gourmetImg from "@/assets/doces-gourmet.jpg";
 import tematicosImg from "@/assets/doces-tematicos.jpg";
@@ -141,7 +141,7 @@ function Sobre() {
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
           <img
-            src={sobreImg}
+            src={sobreAsset.url}
             alt="Williane Diniz, confeiteira e fundadora da Willi Doces, segurando uma bandeja de doces coloridos"
             loading="lazy"
             className="w-full max-w-md mx-auto lg:mx-0 aspect-[3/4] object-cover rounded-2xl shadow-[var(--shadow-photo)]"
