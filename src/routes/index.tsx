@@ -5,13 +5,26 @@ import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 import heroAsset from "@/assets/williane-hero.jpg.asset.json";
 import sobreAsset from "@/assets/williane-sobre-nova.jpg.asset.json";
-import artesanaisImg from "@/assets/doces-artesanais.jpg";
-import gourmetImg from "@/assets/doces-gourmet.jpg";
-import tematicosImg from "@/assets/doces-tematicos.jpg";
-import tropicalImg from "@/assets/portfolio-tropical.jpg";
-import redvelvetImg from "@/assets/portfolio-redvelvet.jpg";
-import amendoimImg from "@/assets/portfolio-amendoim.jpg";
-import floralImg from "@/assets/portfolio-floral.jpg";
+import artesanaisAsset from "@/assets/tipo-tradicional.jpg.asset.json";
+import gourmetAsset from "@/assets/tipo-gourmet.jpg.asset.json";
+import tematicosAsset from "@/assets/tipo-tematico.jpg.asset.json";
+import portfolio1 from "@/assets/portfolio-1.jpg.asset.json";
+import portfolio2 from "@/assets/portfolio-2.jpg.asset.json";
+import portfolio3 from "@/assets/portfolio-3.jpg.asset.json";
+import portfolio4 from "@/assets/portfolio-4.jpg.asset.json";
+import portfolio5 from "@/assets/portfolio-5.jpg.asset.json";
+import portfolio6 from "@/assets/portfolio-6.jpg.asset.json";
+
+const artesanaisImg = artesanaisAsset.url;
+const gourmetImg = gourmetAsset.url;
+const tematicosImg = tematicosAsset.url;
+const tropicalImg = portfolio1.url;
+const redvelvetImg = portfolio2.url;
+const amendoimImg = portfolio3.url;
+const floralImg = portfolio4.url;
+const portfolio5Img = portfolio5.url;
+const portfolio6Img = portfolio6.url;
+
 
 const WHATSAPP_URL = "https://wa.me/message/KJXWWB2VCFYYF1";
 
@@ -76,12 +89,13 @@ function Home() {
       <SiteNav />
       <main>
         <Hero />
-        <Sobre />
         <TiposDeDoces />
+        <Sobre />
         <Portfolio />
         <Depoimentos />
         <InstagramFeed />
         <ContatoCTA />
+
       </main>
       <SiteFooter />
       <WhatsAppFloat />
@@ -236,13 +250,14 @@ function TiposDeDoces() {
 
 function Portfolio() {
   const items = [
-    { img: tropicalImg, caption: "Doces Tropicais — Aniversário — 2024" },
-    { img: redvelvetImg, caption: "Brigadeiros Red Velvet — Casamento — 2024" },
-    { img: amendoimImg, caption: "Brigadeiros de Amendoim — Confraternização — 2024" },
-    { img: floralImg, caption: "Doces Florais — Chá de Panela — 2024" },
-    { img: gourmetImg, caption: "Doces Gourmet — Batizado — 2024" },
-    { img: tematicosImg, caption: "Doces Temáticos — Chá Revelação — 2024" },
+    { img: tropicalImg, caption: "Doces Coloridos — Festa — 2026" },
+    { img: redvelvetImg, caption: "Doces Temáticos — Batizado — 2026" },
+    { img: amendoimImg, caption: "Brigadeiros Dourados — Casamento — 2026" },
+    { img: floralImg, caption: "Doces Gourmet — Confraternização — 2026" },
+    { img: portfolio5Img, caption: "Doces Temáticos — Copa do Mundo — 2026" },
+    { img: portfolio6Img, caption: "Doces Tropicais — Chá de Panela — 2026" },
   ];
+
   return (
     <section id="portfolio" className="bg-[color:var(--blush)] py-20 lg:py-28">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
@@ -343,7 +358,7 @@ function Depoimentos() {
 }
 
 function InstagramFeed() {
-  const feed = [tropicalImg, floralImg, gourmetImg, redvelvetImg, tematicosImg, amendoimImg];
+  const feed = [tropicalImg, floralImg, portfolio5Img, redvelvetImg, portfolio6Img, amendoimImg];
   return (
     <section className="bg-[color:var(--blush)] py-20 lg:py-24">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
