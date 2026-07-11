@@ -89,12 +89,13 @@ function Home() {
       <SiteNav />
       <main>
         <Hero />
-        <Sobre />
         <TiposDeDoces />
+        <Sobre />
         <Portfolio />
         <Depoimentos />
         <InstagramFeed />
         <ContatoCTA />
+
       </main>
       <SiteFooter />
       <WhatsAppFloat />
