@@ -250,13 +250,14 @@ function TiposDeDoces() {
 
 function Portfolio() {
   const items = [
-    { img: tropicalImg, caption: "Doces Tropicais — Aniversário — 2024" },
-    { img: redvelvetImg, caption: "Brigadeiros Red Velvet — Casamento — 2024" },
-    { img: amendoimImg, caption: "Brigadeiros de Amendoim — Confraternização — 2024" },
-    { img: floralImg, caption: "Doces Florais — Chá de Panela — 2024" },
-    { img: gourmetImg, caption: "Doces Gourmet — Batizado — 2024" },
-    { img: tematicosImg, caption: "Doces Temáticos — Chá Revelação — 2024" },
+    { img: tropicalImg, caption: "Doces Coloridos — Festa — 2026" },
+    { img: redvelvetImg, caption: "Doces Temáticos — Batizado — 2026" },
+    { img: amendoimImg, caption: "Brigadeiros Dourados — Casamento — 2026" },
+    { img: floralImg, caption: "Doces Gourmet — Confraternização — 2026" },
+    { img: portfolio5Img, caption: "Doces Temáticos — Copa do Mundo — 2026" },
+    { img: portfolio6Img, caption: "Doces Tropicais — Chá de Panela — 2026" },
   ];
+
   return (
     <section id="portfolio" className="bg-[color:var(--blush)] py-20 lg:py-28">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
