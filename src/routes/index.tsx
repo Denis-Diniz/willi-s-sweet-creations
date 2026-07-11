@@ -358,7 +358,7 @@ function Depoimentos() {
 }
 
 function InstagramFeed() {
-  const feed = [tropicalImg, floralImg, gourmetImg, redvelvetImg, tematicosImg, amendoimImg];
+  const feed = [tropicalImg, floralImg, portfolio5Img, redvelvetImg, portfolio6Img, amendoimImg];
   return (
     <section className="bg-[color:var(--blush)] py-20 lg:py-24">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
