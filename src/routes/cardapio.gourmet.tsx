@@ -29,7 +29,7 @@ const items = [
   { name: "Ninho com Nutella", description: "Leite Ninho com centro cremoso de Nutella.", price50: "R$ 70,00", price100: "R$ 140,00" },
   { name: "Oreo", description: "Creme branco com biscoito Oreo triturado.", price50: "R$ 70,00", price100: "R$ 140,00" },
   { name: "Chocolate Branco", description: "Sabor suave e aveludado de chocolate branco.", price50: "R$ 70,00", price100: "R$ 140,00" },
-  { name: "Caipirinha (alcoólico)", description: "Toque cítrico com um leve blend alcoólico. Somente para adultos.", price50: "R$ 80,00", price100: "R$ 160,00" },
+  { name: "Caipirinha (alcoólico)", description: "Toque cítrico de limão com um leve blend alcoólico. Somente para adultos.", price50: "R$ 80,00", price100: "R$ 160,00" },
 ];
 
 function Page() {
