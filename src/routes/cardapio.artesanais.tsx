@@ -25,11 +25,11 @@ export const Route = createFileRoute("/cardapio/artesanais")({
 });
 
 const items = [
-  { name: "Brigadeiro", description: "Chocolate nobre com granulado — o clássico atemporal." },
+  { name: "Brigadeiro", description: "Chocolate 50% cacau com granulado, o clássico atemporal." },
   { name: "Leite Ninho", description: "Cremoso de leite Ninho com toque adocicado." },
-  { name: "Beijinho de Coco", description: "Coco fresco e cravo da índia, a receita da vovó." },
+  { name: "Beijinho", description: "Cremoso e suave, preparado com coco ralado." },
   { name: "Moranguinho", description: "Sabor delicado de morango com finalização caprichada." },
-  { name: "Cajuzinho", description: "Amendoim moído com chocolate e castanha inteira no topo." },
+  { name: "Cajuzinho", description: "Tradicional combinação de amendoim e chocolate, com sabor intenso e marcante." },
   { name: "Casadinho", description: "Meio branco, meio brigadeiro — o par perfeito." },
 ].map((it) => ({ ...it, price50: "R$ 60,00", price100: "R$ 120,00" }));
 
