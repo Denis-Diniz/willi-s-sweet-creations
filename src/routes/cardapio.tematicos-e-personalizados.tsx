@@ -3,6 +3,7 @@ import { CardapioPage } from "@/components/cardapio-page";
 import imgAsset from "@/assets/doce-tematico-capa.jpg.asset.json";
 const img = imgAsset.url;
 
+
 const WHATSAPP_URL = "https://wa.me/message/KJXWWB2VCFYYF1";
 
 export const Route = createFileRoute("/cardapio/tematicos-e-personalizados")({
