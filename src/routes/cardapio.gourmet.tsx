@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CardapioPage } from "@/components/cardapio-page";
-import img from "@/assets/doces-gourmet.jpg";
+import imgAsset from "@/assets/doce-gourmet-capa.jpg.asset.json";
+const img = imgAsset.url;
 
 export const Route = createFileRoute("/cardapio/gourmet")({
   head: () => ({
