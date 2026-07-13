@@ -5,9 +5,9 @@ import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 import heroAsset from "@/assets/williane-hero.jpg.asset.json";
 import sobreAsset from "@/assets/williane-sobre-nova.jpg.asset.json";
-import artesanaisAsset from "@/assets/tipo-tradicional.jpg.asset.json";
-import gourmetAsset from "@/assets/tipo-gourmet.jpg.asset.json";
-import tematicosAsset from "@/assets/tipo-tematico.jpg.asset.json";
+import artesanaisAsset from "@/assets/doce-tradicional-capa.jpg.asset.json";
+import gourmetAsset from "@/assets/doce-gourmet-capa.jpg.asset.json";
+import tematicosAsset from "@/assets/doce-tematico-capa.jpg.asset.json";
 import portfolio1 from "@/assets/portfolio-1.jpg.asset.json";
 import portfolio2 from "@/assets/portfolio-2.jpg.asset.json";
 import portfolio3 from "@/assets/portfolio-3.jpg.asset.json";
