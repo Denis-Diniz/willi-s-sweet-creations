@@ -3,6 +3,7 @@ import { CardapioPage } from "@/components/cardapio-page";
 import imgAsset from "@/assets/doce-tematico-capa.jpg.asset.json";
 const img = imgAsset.url;
 
+
 const WHATSAPP_URL = "https://wa.me/message/KJXWWB2VCFYYF1";
 
 export const Route = createFileRoute("/cardapio/tematicos-e-personalizados")({
@@ -57,91 +58,7 @@ function Page() {
       <p className="mt-10 p-5 rounded-lg bg-[color:var(--blush)] text-[color:var(--cacau)] italic text-[0.95rem] leading-relaxed border-l-[3px] border-[color:var(--rosegold)]">
         Os docinhos temáticos são produzidos de acordo com o tema de preferência do cliente.
       </p>
-
-      <div className="mt-12 bg-[color:var(--blush)] rounded-2xl p-8 sm:p-12">
-        <span className="eyebrow block mb-3">Conte sua ideia</span>
-        <span className="divider-gold mb-5" />
-        <h3 className="font-display font-bold text-[clamp(1.5rem,3vw,2rem)] text-gradient-gold">
-          Vamos criar juntas o cardápio da sua festa.
-        </h3>
-        <p className="mt-4 text-[color:var(--rosewood)] leading-relaxed">
-          Preencha os detalhes e enviaremos o orçamento pelo WhatsApp em até 24h.
-        </p>
-
-        <form
-          className="mt-8 grid gap-5 sm:grid-cols-2"
-          onSubmit={(e) => {
-            e.preventDefault();
-            const form = e.currentTarget;
-            const data = new FormData(form);
-            const msg = [
-              `Olá, Willi! Gostaria de um orçamento personalizado.`,
-              `Nome: ${data.get("nome")}`,
-              `Data do evento: ${data.get("data")}`,
-              `Tema: ${data.get("tema")}`,
-              `Quantidade estimada: ${data.get("qtd")}`,
-              `Mensagem: ${data.get("mensagem")}`,
-            ].join("\n");
-            window.open(
-              `${WHATSAPP_URL}?text=${encodeURIComponent(msg)}`,
-              "_blank",
-              "noopener,noreferrer",
-            );
-          }}
-        >
-          <Field label="Nome" name="nome" required />
-          <Field label="Data do evento" name="data" type="date" required />
-          <Field label="Tema" name="tema" placeholder="Ex: Chá de bebê safári" required />
-          <Field label="Quantidade estimada" name="qtd" placeholder="Ex: 80 doces" required />
-          <div className="sm:col-span-2 flex flex-col gap-1.5">
-            <label className="text-sm font-medium text-[color:var(--rosewood)]">Mensagem</label>
-            <textarea
-              name="mensagem"
-              rows={4}
-              className="rounded-md border-[1.5px] border-[color:var(--border-subtle)] bg-white px-4 py-3 text-[color:var(--cacau)] focus:outline-none focus:border-[color:var(--rosegold)] focus:ring-4 focus:ring-[color:var(--rosegold)]/15 transition"
-              placeholder="Conte sua ideia..."
-            />
-          </div>
-          <div className="sm:col-span-2">
-            <button
-              type="submit"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-md bg-[color:var(--rosegold)] text-white font-medium tracking-wide shadow-[var(--shadow-btn)] hover:-translate-y-0.5 hover:brightness-110 transition-all"
-            >
-              Enviar orçamento pelo WhatsApp
-            </button>
-          </div>
-        </form>
-      </div>
     </CardapioPage>
   );
 }
 
-function Field({
-  label,
-  name,
-  type = "text",
-  placeholder,
-  required,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  placeholder?: string;
-  required?: boolean;
-}) {
-  return (
-    <div className="flex flex-col gap-1.5">
-      <label htmlFor={name} className="text-sm font-medium text-[color:var(--rosewood)]">
-        {label}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        required={required}
-        className="rounded-md border-[1.5px] border-[color:var(--border-subtle)] bg-white px-4 py-3 text-[color:var(--cacau)] focus:outline-none focus:border-[color:var(--rosegold)] focus:ring-4 focus:ring-[color:var(--rosegold)]/15 transition"
-      />
-    </div>
-  );
-}
