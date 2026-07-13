@@ -260,6 +260,36 @@ function Portfolio() {
     { img: portfolio6Img, caption: "Doces Tropicais — Chá de Panela — 2026" },
   ];
 
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
+  const [active, setActive] = useState(0);
+
+  const scrollBy = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-card]");
+    const step = card ? card.offsetWidth + 16 : el.clientWidth * 0.9;
+    el.scrollBy({ left: step * dir, behavior: "smooth" });
+  };
+
+  const onScroll = () => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-card]");
+    const step = card ? card.offsetWidth + 16 : el.clientWidth;
+    setActive(Math.round(el.scrollLeft / step));
+  };
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      const el = scrollerRef.current;
+      if (!el) return;
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+      if (atEnd) el.scrollTo({ left: 0, behavior: "smooth" });
+      else scrollBy(1);
+    }, 5000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section id="portfolio" className="bg-[color:var(--blush)] py-20 lg:py-28">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
@@ -271,13 +301,58 @@ function Portfolio() {
           </h2>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-12">
-          <PortfolioTile item={items[0]} className="md:col-span-7 md:row-span-2 aspect-[4/3] md:aspect-auto" />
-          <PortfolioTile item={items[1]} className="md:col-span-5 aspect-[4/3]" />
-          <PortfolioTile item={items[2]} className="md:col-span-5 aspect-[4/3]" />
-          <PortfolioTile item={items[3]} className="md:col-span-5 aspect-[4/3]" />
-          <PortfolioTile item={items[4]} className="md:col-span-5 aspect-[4/3]" />
-          <PortfolioTile item={items[5]} className="md:col-span-7 md:row-span-2 aspect-[4/3] md:aspect-auto" />
+        <div className="relative">
+          <div
+            ref={scrollerRef}
+            onScroll={onScroll}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {items.map((it, i) => (
+              <figure
+                key={i}
+                data-card
+                className="group relative shrink-0 snap-center overflow-hidden rounded-xl shadow-[var(--shadow-card)] w-[85%] sm:w-[60%] md:w-[45%] lg:w-[32%] aspect-[4/3]"
+              >
+                <img
+                  src={it.img}
+                  alt={it.caption}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(61,31,26,0.85)] via-[rgba(61,31,26,0.4)] to-transparent px-5 py-4">
+                  <span className="font-display text-white text-sm sm:text-base">{it.caption}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            aria-label="Anterior"
+            onClick={() => scrollBy(-1)}
+            className="hidden sm:grid absolute left-2 top-1/2 -translate-y-1/2 place-items-center w-11 h-11 rounded-full bg-white/90 text-[color:var(--cacau)] shadow-[var(--shadow-card)] hover:bg-white transition"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            aria-label="Próximo"
+            onClick={() => scrollBy(1)}
+            className="hidden sm:grid absolute right-2 top-1/2 -translate-y-1/2 place-items-center w-11 h-11 rounded-full bg-white/90 text-[color:var(--cacau)] shadow-[var(--shadow-card)] hover:bg-white transition"
+          >
+            ›
+          </button>
+
+          <div className="mt-4 flex justify-center gap-2">
+            {items.map((_, i) => (
+              <span
+                key={i}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === active ? "w-6 bg-[color:var(--rosegold)]" : "w-1.5 bg-[color:var(--rosegold)]/30"
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="mt-12 text-center">
@@ -295,27 +370,6 @@ function Portfolio() {
   );
 }
 
-function PortfolioTile({
-  item,
-  className,
-}: {
-  item: { img: string; caption: string };
-  className?: string;
-}) {
-  return (
-    <figure className={`group relative overflow-hidden rounded-lg ${className ?? ""}`}>
-      <img
-        src={item.img}
-        alt={item.caption}
-        loading="lazy"
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      />
-      <figcaption className="absolute inset-0 grid place-items-center bg-[rgba(61,31,26,0.55)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-6 text-center">
-        <span className="font-display text-white text-lg">{item.caption}</span>
-      </figcaption>
-    </figure>
-  );
-}
 
 function Depoimentos() {
   return (
