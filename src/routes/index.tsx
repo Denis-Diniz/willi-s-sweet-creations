@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
+
 
 import heroAsset from "@/assets/williane-hero.jpg.asset.json";
 import sobreAsset from "@/assets/williane-sobre-nova.jpg.asset.json";
