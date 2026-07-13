@@ -25,7 +25,7 @@ export const Route = createFileRoute("/cardapio/gourmet")({
 });
 
 const items = [
-  { name: "Ferrero Rocher", description: "Recheio de avelã com crocante e cobertura clássica.", price50: "R$ 70,00", price100: "R$ 140,00" },
+  { name: "Ferrero Rocher", description: "Sofisticado de chocolate e avelã, com nozes crocantes e centro de Nutella.", price50: "R$ 70,00", price100: "R$ 140,00" },
   { name: "Ninho com Nutella", description: "Leite Ninho com centro cremoso de Nutella.", price50: "R$ 70,00", price100: "R$ 140,00" },
   { name: "Oreo", description: "Creme branco com biscoito Oreo triturado.", price50: "R$ 70,00", price100: "R$ 140,00" },
   { name: "Chocolate Branco", description: "Sabor suave e aveludado de chocolate branco.", price50: "R$ 70,00", price100: "R$ 140,00" },
